@@ -2,7 +2,7 @@ image: maven:3.6.3
 pipelines:
   default:
     - step:
-        name: Build and Push Wavenet Repository
+        name: Build and Push
         script:
           - mvn clean install
           - docker login test.domain.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
