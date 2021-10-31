@@ -1,0 +1,17 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: ${CONTEXT_PATH:/weather}
+openweather:
+  url: ${OPEN_WEATHER_URL:https://api.openweathermap.org}
+  appId: ${OPEN_WEATHER_API_KEY:d2929e9483efc82c82c32ee7e02d563e}
+
+# For fallback enable this
+feign:
+  circuitbreaker:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
