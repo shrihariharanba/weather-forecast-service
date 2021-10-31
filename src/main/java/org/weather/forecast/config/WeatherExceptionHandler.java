@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Advice class to handle Weather Exception and return the response with error code and error message
+ */
 @ControllerAdvice(annotations = RestController.class)
 @Component
 public class WeatherExceptionHandler {

@@ -7,6 +7,9 @@ import org.springframework.boot.jackson.JsonComponent;
 
 import java.io.IOException;
 
+/**
+ * Custom float serializer to convert 2 decimal only
+ */
 @JsonComponent
 public class CustomFloatSerializer extends JsonSerializer<Float> {
     @Override

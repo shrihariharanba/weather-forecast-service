@@ -5,6 +5,9 @@ import org.weather.forecast.model.CityWeatherForecast;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Singleton cache saves all the latest city forecast data
+ */
 public class LocalCache {
     private Map<String, CityWeatherForecast> CACHE;
     private static LocalCache INSTANCE = new LocalCache();

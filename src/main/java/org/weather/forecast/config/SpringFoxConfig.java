@@ -16,6 +16,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
+/**
+ * Swagger api document configuration class
+ */
 @Configuration
 @EnableSwagger2
 public class SpringFoxConfig {
@@ -27,10 +30,6 @@ public class SpringFoxConfig {
                 .paths(PathSelectors.any())
                 .build()
                 .pathMapping("/");
-    }
-
-    private Predicate<String> postPaths() {
-        return or(regex("/weather.*"));
     }
 
     private ApiInfo apiInfo() {

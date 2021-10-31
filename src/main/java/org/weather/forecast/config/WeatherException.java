@@ -3,6 +3,9 @@ package org.weather.forecast.config;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * WeatherException to handle the runtime exception for the whole service
+ */
 public class WeatherException extends RuntimeException{
 
     @JsonProperty("cod")

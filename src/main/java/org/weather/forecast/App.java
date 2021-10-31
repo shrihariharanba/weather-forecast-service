@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * Hello world!
+ * Weather forecast Service
  *
  */
 @EnableFeignClients

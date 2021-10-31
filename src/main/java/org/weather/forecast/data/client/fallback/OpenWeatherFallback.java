@@ -12,7 +12,7 @@ import org.weather.forecast.util.ExceptionType;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Open weather fallback
+ * Open weather fallback handler
  */
 public class OpenWeatherFallback implements OpenWeather {
 
@@ -24,6 +24,13 @@ public class OpenWeatherFallback implements OpenWeather {
 
     private ObjectMapper mapper = new ObjectMapper();
 
+    /**
+     * Method to handle the fallback while fetching the CityForecast from the OpenWeather API
+     * @param city - city name
+     * @param appId - app id for authentication
+     * @param count - number of forecast to be fetched
+     * @return cityWeatherForecast
+     */
     @Override
     public CityWeatherForecast getCityForecast(String city, String appId, Integer count) {
         WeatherException exception = convertToWeatherException((FeignClientException) cause);
@@ -37,7 +44,11 @@ public class OpenWeatherFallback implements OpenWeather {
         }
     }
 
-
+    /**
+     * Method to convert the FeignClientException response body to WeatherException
+     * @param clientException  - FeignClientException
+     * @return WeatherException
+     */
     private WeatherException convertToWeatherException(FeignClientException clientException) {
         String exceptionJson = StandardCharsets.UTF_8.decode(clientException.responseBody().get()).toString();
         try {
