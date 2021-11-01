@@ -7,11 +7,12 @@ openweather:
   appId: ${OPEN_WEATHER_API_KEY:d2929e9483efc82c82c32ee7e02d563e}
 
 # For fallback enable this
-feign:
-  circuitbreaker:
-    enabled: true
-  client:
-    config:
+  hystrix:
+    metrics:
+      enabled: true
+    command:
       default:
-        connectTimeout: 5000
-        readTimeout: 5000
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 12000
