@@ -8,7 +8,6 @@ import org.springframework.boot.jackson.JsonComponent;
 import java.io.IOException;
 import java.text.ParseException;
 
-@JsonComponent
 public class CustomTimeSerializer extends JsonSerializer<String> {
     @Override
     public void serialize(String fullDate, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {

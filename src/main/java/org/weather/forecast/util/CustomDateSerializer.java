@@ -14,7 +14,6 @@ import java.util.Date;
 /**
  * Custom date serializer to convert date  with time to date only
  */
-@JsonComponent
 public class CustomDateSerializer extends JsonSerializer<String> {
 
     @Override
